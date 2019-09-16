@@ -1,11 +1,13 @@
 https://fmo-a3-persistence.glitch.me
 
+Username:admin
+Password:admin
+Using these to login and than editing
 
-
-
-middleware
-passporrt
+Middleware:
+passport
 errorhandler
-cookieSession
-BodyParser
-CookieParser
+cookiesession
+bodyParser
+cookieParser
+
