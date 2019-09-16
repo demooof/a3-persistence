@@ -1,0 +1,119 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta name="description" content="Login to system">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/dashboard.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="/dashboard.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>
+        DashBoard
+    </h1>
+</header>
+<main>
+    <div class="row">
+        <div class="col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">Users</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Books</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="true">BorrowingList</a>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <ul class="list-group" id="user-group">
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item flex-fill list-group-item-primary">id</li>
+                            <li class="list-group-item flex-fill list-group-item-primary">name</li>
+                        </ul>
+                    </ul>
+                    <form id ="add-user">
+                        <div class="form-group">
+                            <label for="user-id">User Id</label>
+                            <input type="number" class="form-control" id="user-id"  placeholder="Enter Id">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-name">User Name</label>
+                            <input type="text" class="form-control" id="user-name" placeholder="User Name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <ul class="list-group" id="book-group">
+                        <ul class="list-group list-group-horizontal ">
+                            <li class="list-group-item flex-fill list-group-item-primary">id</li>
+                            <li class="list-group-item flex-fill list-group-item-primary">name</li>
+                        </ul>
+                    </ul>
+                    <form id ="add-book">
+                        <div class="form-group">
+                            <label for="book-id">Book Id</label>
+                            <input type="number" class="form-control" id="book-id"  placeholder="Enter Id">
+                        </div>
+                        <div class="form-group">
+                            <label for="book-name">Book Name</label>
+                            <input type="text" class="form-control" id="book-name" placeholder="User Name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <ul class="list-group" id="borrowlist-group">
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item flex-fill list-group-item-primary">id</li>
+                            <li class="list-group-item flex-fill list-group-item-primary">user-name</li>
+                            <li class="list-group-item flex-fill list-group-item-primary">book-name</li>
+                            <li class="list-group-item flex-fill list-group-item-primary">control</li>
+                        </ul>
+                    </ul>
+                    <form id ="edit-relation">
+                        <div class="form-group">
+                            <label for="relation-id">Id</label>
+                            <input type="number" disabled class="form-control" id="relation-id"  placeholder="Enter Id">
+                        </div>
+                        <div class="form-group">
+                            <label for="relation-user-id">User Id</label>
+                            <input type="number" class="form-control" id="relation-user-id"  placeholder="Enter Id">
+                        </div>
+                        <div class="form-group">
+                            <label for="relation-book-id">Book Id</label>
+                            <input type="number" class="form-control" id="relation-book-id" placeholder="User Name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://button.glitch.me/button.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
